@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>meme-genrator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onload=init()>
+    <header class="main-header"><img class='logo' src="ICONS/LOGO.png" alt=""><li class="nav"><ul onclick="backToGallery()">Gallery</ul><ul>About</ul></li></header>
+    <div class="image-gallery">
+      <div class="search-box"><input type="text" placeholder="search"></div>
+      <div class="gallery">
+      
+          <img class='img img-1' onclick=putPicOnCanvas(1) src="meme-imgs (square)/1.jpg" alt="">
+          <img class='img img-2' onclick=putPicOnCanvas(2) src="meme-imgs (square)/2.jpg" alt="">
+          <img class='img img-3' onclick=putPicOnCanvas(3) src="meme-imgs (square)/3.jpg" alt="">
+          <img class='img img-4' onclick=putPicOnCanvas(4)  src="meme-imgs (square)/4.jpg" alt="">
+          <img class='img img-5' onclick=putPicOnCanvas(5)  src="meme-imgs (square)/5.jpg" alt="">
+          <img class='img img-6' onclick=putPicOnCanvas(6)  src="meme-imgs (square)/6.jpg" alt="">
+          <img class='img img-7' onclick=putPicOnCanvas(7)  src="meme-imgs (square)/7.jpg" alt="">
+          <img class='img img-8' onclick=putPicOnCanvas(8)  src="meme-imgs (square)/8.jpg" alt="">
+          <img class='img img-9' onclick=putPicOnCanvas(9)  src="meme-imgs (square)/9.jpg" alt="">
+          <img class='img img-10' onclick=putPicOnCanvas(10)  src="meme-imgs (square)/10.jpg" alt="">
+          <img class='img img-11' onclick=putPicOnCanvas(11)  src="meme-imgs (square)/11.jpg" alt="">
+          <img class='img img-12' onclick=putPicOnCanvas(12)  src="meme-imgs (square)/12.jpg" alt="">
+          <img class='img img-13' onclick=putPicOnCanvas(13)  src="meme-imgs (square)/13.jpg" alt="">
+          <img class='img img-14' onclick=putPicOnCanvas(14)  src="meme-imgs (square)/14.jpg" alt="">
+          <img class='img img-15' onclick=putPicOnCanvas(15)  src="meme-imgs (square)/15.jpg" alt="">
+          <img class='img img-16' onclick=putPicOnCanvas(16)  src="meme-imgs (square)/16.jpg" alt="">
+          <img class='img img-17' onclick=putPicOnCanvas(17)  src="meme-imgs (square)/17.jpg" alt="">
+          <img class='img img-18' onclick=putPicOnCanvas(18)  src="meme-imgs (square)/18.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="meme-editor" >
+      meme-editor
+      <canvas
+      id="my-canvas"
+      height="500"
+      width="500"
+    ></canvas>
+    <div class="buttons">
+      <button onclick=changeFontSize(+1)>increse font</button>
+      <button onclick=changeFontSize(-1)>decrese font</button>
+      <button onclick=createNewInput()>new line</button>
+    </div>
+ 
+    <input id="input1" type="text" placeholder="enter text here">
+    <input id="input2" type="text" placeholder="enter text here">
+  </div>
+    </div>
+    <footer>MEMEGEN 2021 (C)</footer>
+    <script src="js/memeService.js"></script>
+    <script src="js/main-controller.js"></script>
+  </body>
+</html>
+
+
+<!-- onclick="draw(event)" -->
