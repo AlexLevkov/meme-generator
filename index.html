@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>meme-genrator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onload="init()">
+    <header class="main-header">
+      <img onclick="onGallery()" class="logo" src="ICONS/LOGO.png" alt="" />
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="nav">
+        <li onclick="onMemesGallery()">Memes</li>
+        <li onclick="onGallery()">Gallery</li>
+        <li onclick="onAbout()">About</li>
+      </ul>
+    </header>
+
+    <div class="image-gallery">
+      <div class="gallery">
+        <img
+          class="img img-1"
+          onclick="putPicOnCanvas(1)"
+          src="meme-imgs (square)/1.jpg"
+          alt=""
+        />
+        <img
+          class="img img-2"
+          onclick="putPicOnCanvas(2)"
+          src="meme-imgs (square)/2.jpg"
+          alt=""
+        />
+        <img
+          class="img img-3"
+          onclick="putPicOnCanvas(3)"
+          src="meme-imgs (square)/3.jpg"
+          alt=""
+        />
+        <img
+          class="img img-4"
+          onclick="putPicOnCanvas(4)"
+          src="meme-imgs (square)/4.jpg"
+          alt=""
+        />
+        <img
+          class="img img-5"
+          onclick="putPicOnCanvas(5)"
+          src="meme-imgs (square)/5.jpg"
+          alt=""
+        />
+        <img
+          class="img img-6"
+          onclick="putPicOnCanvas(6)"
+          src="meme-imgs (square)/6.jpg"
+          alt=""
+        />
+        <img
+          class="img img-7"
+          onclick="putPicOnCanvas(7)"
+          src="meme-imgs (square)/7.jpg"
+          alt=""
+        />
+        <img
+          class="img img-8"
+          onclick="putPicOnCanvas(8)"
+          src="meme-imgs (square)/8.jpg"
+          alt=""
+        />
+        <img
+          class="img img-9"
+          onclick="putPicOnCanvas(9)"
+          src="meme-imgs (square)/9.jpg"
+          alt=""
+        />
+        <img
+          class="img img-10"
+          onclick="putPicOnCanvas(10)"
+          src="meme-imgs (square)/10.jpg"
+          alt=""
+        />
+        <img
+          class="img img-11"
+          onclick="putPicOnCanvas(11)"
+          src="meme-imgs (square)/11.jpg"
+          alt=""
+        />
+        <img
+          class="img img-12"
+          onclick="putPicOnCanvas(12)"
+          src="meme-imgs (square)/12.jpg"
+          alt=""
+        />
+        <img
+          class="img img-13"
+          onclick="putPicOnCanvas(13)"
+          src="meme-imgs (square)/13.jpg"
+          alt=""
+        />
+        <img
+          class="img img-14"
+          onclick="putPicOnCanvas(14)"
+          src="meme-imgs (square)/14.jpg"
+          alt=""
+        />
+        <img
+          class="img img-15"
+          onclick="putPicOnCanvas(15)"
+          src="meme-imgs (square)/15.jpg"
+          alt=""
+        />
+        <img
+          class="img img-16"
+          onclick="putPicOnCanvas(16)"
+          src="meme-imgs (square)/16.jpg"
+          alt=""
+        />
+        <img
+          class="img img-17"
+          onclick="putPicOnCanvas(17)"
+          src="meme-imgs (square)/17.jpg"
+          alt=""
+        />
+        <img
+          class="img img-18"
+          onclick="putPicOnCanvas(18)"
+          src="meme-imgs (square)/18.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="meme-gallery" hidden>
+      <h1 class="meme-gallery-empty">
+        Your gallery is empty, you can create some memes and save them here 😁
+      </h1>
+    </div>
+
+    <div class="meme-editor">
+      <canvas
+        onclick="onCanvasClick(event)"
+        onmousedown="grabText(event)"
+        onmousemove="moveText(event)"
+        onmouseup="putText(event)"
+        id="my-canvas"
+        height="500"
+        width="500"
+      ></canvas>
+
+      <div class="editor">
+        <div class="inputs">
+          <input
+            id="input0"
+            name="0"
+            type="text"
+            placeholder="Enter text here"
+          />
+        </div>
+
+        <div class="buttons">
+          <button onclick="changeLocation(+1)" class="up">
+            <img class="icon" src="ICONS/down.jpg" alt="" />
+          </button>
+          <button onclick="changeLocation(-1)" class="down">
+            <img class="icon" src="ICONS/up.jpg" alt="" />
+          </button>
+          <button onclick="onSwitchLines()" class="switch-lines">
+            <img
+              class="icon"
+              src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+              alt=""
+            />
+          </button>
+          <button onclick="onAddLine()" class="add-lines">
+            <img class="icon" src="ICONS/add.png" alt="" />
+          </button>
+          <button onclick="onDeleteText()" class="delete">
+            <img class="icon" src="ICONS/trash.png" alt="" />
+          </button>
+          <button class="increse-font" onclick="changeFontSize(+1)">
+            <img class="icon" src="ICONS/increase font - icon.png" alt="" />
+          </button>
+          <button class="decrese-font" onclick="changeFontSize(-1)">
+            <img class="icon" src="ICONS/decrease font - icon.png" alt="" />
+          </button>
+          <button onclick="changeDirection('left')" class="ltr">
+            <img class="icon" src="ICONS/align-to-left.png" alt="" />
+          </button>
+          <button onclick="changeDirection('center')" class="center">
+            <img class="icon" src="ICONS/center-text-alignment.png" alt="" />
+          </button>
+          <button onclick="changeDirection('right')" class="rtl">
+            <img class="icon" src="ICONS/align-to-right.png" alt="" />
+          </button>
+          <button class="font-type">
+            <select
+              class="input-font-type"
+              name="font-type"
+              onchange="onChangeFontType()"
+            >
+              <option style="font-family: Impact" value="Impact">Impact</option>
+              <option style="font-family: Times" value="Times">Times</option>
+              <option style="font-family: Arial" value="Arial">Arial</option>
+              <option style="font-family: Verdana" value="Verdana">
+                Verdana
+              </option>
+              <option style="font-family: Courier" value="Courier">
+                Courier
+              </option>
+              <option style="font-family: Georgia" value="Georgia">
+                Georgia
+              </option>
+            </select>
+          </button>
+          <button onclick="openColorMenu()" class="font-color">
+            <img class="icon" src="ICONS/paint-board-and-brush.png" alt="" />
+          </button>
+          <input
+            hidden
+            class="input-color"
+            type="color"
+            id="color"
+            value="#ffffff"
+            oninput="changeFontColor()"
+          />
+          <button onclick="openStrokeColorMenu()" class="stroke-color">
+            <img class="icon" src="ICONS/text stroke.png" alt="" />
+          </button>
+          <input
+            hidden
+            class="input-stroke-color"
+            type="color"
+            id="stroke-color"
+            value="#ffffff"
+            oninput="changeStrokeColor()"
+          />
+
+          <button
+            onclick="downloadCanvas(this)"
+            download="file-name"
+            class="download btn"
+          >
+            <a onclick="downloadCanvas(this)" download="file-name">Download</a>
+          </button>
+
+          <button class="save btn" onclick="onSave()">Save</button>
+          <button class="fb btn"></button>
+          <div class="share">
+            <form
+              action=""
+              method="POST"
+              enctype="multipart/form-data"
+              onsubmit="uploadImg(this, event)"
+            >
+              <input name="img" id="imgData" type="hidden" />
+              <button class="share btn" type="submit">Share</button>
+
+              <div class="share-container"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal modal-hide">
+      <h1>
+        MEMEGEN is a coding project by Alex Levkov - thanks for watching! enjoy
+        your memes 😎
+        <button onclick="onAbout()">OK! Lets make some memes!</button>
+      </h1>
+    </div>
+    <footer>MEMEGEN 2021 - Alex Levkov ©</footer>
+
+    <script src="js/upload-service.js"></script>
+    <script src="js/storage-servies.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/main-controller.js"></script>
+  </body>
+</html>
