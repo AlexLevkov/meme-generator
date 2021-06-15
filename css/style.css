@@ -312,14 +312,13 @@ form {
 footer {
   border-top: 2px black solid;
   /* margin-top: 230px; */
-  height: 200px;
+  height: 150px;
   background-color: orangered;
   font-size: 2rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
   position: fixed;
   bottom: 0;
   width: 100%;
