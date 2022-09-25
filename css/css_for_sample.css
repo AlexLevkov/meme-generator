@@ -1,0 +1,36 @@
+*{
+   margin: 0;
+}
+
+.parent{
+   display: flex;
+   flex-wrap: wrap;
+   /* height: 100vh; */
+   /* height:1200px; */
+   /* height: 200px; */
+}
+
+.header{
+   background-color: red;
+   /* min-height: 10vh; */
+   /* min-height: 10%; */
+}
+
+.main{
+   background-color: blue;
+   /* min-height: 80vh; */
+   /* min-height: 80%; */
+}
+
+.footer{
+   background-color: greenyellow;
+   /* min-height: 10vh; */
+   /* min-height: 10%; */
+}
+
+.box{
+   background-color: chocolate;
+   height: 200px;
+   width: 200px;
+   border: 1px black solid;
+}

@@ -35,6 +35,8 @@ button:hover {
   color: white;
   height: 50px;
   align-self: center;
+  padding: 2px;
+  margin-left: 3px;
 }
 
 .burger {
@@ -71,7 +73,7 @@ li:hover {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px black solid;
-  height: 70px;
+  /* height: 70px; */
 
   /* align-items: center; */
 }
@@ -83,8 +85,7 @@ li:hover {
 /* ****** CENTER ***** */
 
 .modal {
-  width: 400px;
-  height: 400px;
+  width: 250px;
   background-color: orangered;
   color: white;
   font-size: 1.4rem;
@@ -97,6 +98,11 @@ li:hover {
   border: 2px black solid;
 }
 
+.modal h2{
+  font-weight: normal;
+  margin: 5px 0 20px
+}
+
 .modal-hide {
   display: none;
 }
@@ -107,19 +113,24 @@ li:hover {
   display: none;
   grid-template-columns: repeat(auto-fit, 200px);
   gap: 15px;
-  margin: 10px auto;
+  /* margin: 10px auto; */
   grid-auto-rows: 200px;
-  width: 90%;
+  /* width: 90%; */
+  padding: 15px;
+  min-height: 86vh;
 }
 
 .gallery {
-  margin: 15px 0;
+  /* margin: 15px 0; */
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   gap: 15px;
   grid-auto-rows: 200px;
   width: 95%;
   margin: 0 auto;
+  padding: 15px;
+  justify-content: center;
+  min-height: 86vh;
 }
 
 img {
@@ -133,17 +144,15 @@ img:hover {
 .icon:hover,
 .img:hover {
   cursor: pointer;
-  border: white 3px solid;
+  border: whitesmoke 3px solid;
 }
 
 .meme-editor {
   display: none;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
   margin-top: 50px;
-}
-
-.gallery {
-  margin-top: 25px;
+  min-height: 86vh;
 }
 
 .search-box {
@@ -155,13 +164,13 @@ img:hover {
 
 #input0 {
   height: 3.5rem;
-  width: 30rem;
   font-size: 3rem;
 }
 
 canvas {
   margin: 20px;
   border: 2px black solid;
+  height: fit-content;
 }
 
 .inputs {
@@ -170,6 +179,28 @@ canvas {
   margin-top: 50px;
   align-items: center;
 }
+
+.input-stroke-color-img{
+  background-image:url('../ICONS/text\ stroke.png');
+  background-repeat:round;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  top: 25%;
+  left: 25%;
+}
+
+.input-color-img{
+  background-image:url('../ICONS/paint-board-and-brush.png');
+  background-repeat:round;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  top: 25%;
+  left: 25%;
+}
+
+
 
 /* ****** GRID DESIGN ****** */
 
@@ -182,13 +213,13 @@ canvas {
   grid-template-areas:
     'up down switch-lines add-lines delete'
     'increse-font decrese-font ltr center rtl'
-    'font-type font-type font-type stroke-color font-color'
-    'fb share save download download';
+    'font-type font-type font-type input-stroke-color-grid input-color-grid'
+    'download download download share save ';
 }
 
 button {
-  font-size: 1.5rem;
-  background-color: white;
+  font-size: 1.3rem;
+  background-color: whitesmoke;
   min-width: 20px;
   min-height: 20px;
   border: 2px black solid;
@@ -205,44 +236,28 @@ button {
   margin: 5px;
   grid-area: input0;
 }
-.up {
-  grid-area: up;
-}
-.down {
-  grid-area: down;
-}
-.switch-lines {
-  grid-area: switch-lines;
-}
-.add-lines {
-  grid-area: add-lines;
-}
-.delete {
-  grid-area: delete;
-}
-.increse-font {
-  grid-area: increse-font;
-}
-.decrese-font {
-  grid-area: decrese-font;
-}
-.switch-lines {
-  grid-area: switch-lines;
-}
-.ltr {
-  grid-area: ltr;
-}
-.center {
-  grid-area: center;
-}
-.rtl {
-  grid-area: rtl;
-}
+
+.up {  grid-area: up;}
+.down {  grid-area: down;}
+.switch-lines {  grid-area: switch-lines;}
+.add-lines {  grid-area: add-lines;}
+.delete {  grid-area: delete;}
+.increse-font {  grid-area: increse-font;}
+.decrese-font {  grid-area: decrese-font;}
+.switch-lines {  grid-area: switch-lines;}
+.ltr {  grid-area: ltr;}
+.center {  grid-area: center;}
+.rtl {  grid-area: rtl;}
+.input-stroke-color-grid {  grid-area: input-stroke-color-grid;}
+.input-color-color-grid {  grid-area: input-color-color-grid;}
+
+
 .font-type {
   grid-area: font-type;
   border: none;
   padding: 0;
 }
+
 .input-font-type {
   width: 100%;
   height: 100%;
@@ -251,15 +266,24 @@ button {
   border: 2px black solid;
   outline: none;
   text-align: center;
+  background-color: whitesmoke;
 }
 .stroke-color {
   grid-area: stroke-color;
 }
 .input-stroke-color {
-  grid-area: stroke-color;
+  grid-area: input-stroke-color;
   width: 100%;
   height: 100%;
+  position: relative;
+  top: -50%;
+  opacity: 0;
 }
+.input-stroke-color:hover{
+  cursor: pointer;
+}
+
+
 .fb {
   display: none;
 }
@@ -270,6 +294,9 @@ button {
   grid-area: font-color;
   width: 100%;
   height: 100%;
+  position: relative;
+  top: -50%;
+  opacity: 0;
 }
 .stickers {
   grid-area: stickers;
@@ -310,19 +337,16 @@ form {
 /* ****** BOTTOM ***** */
 
 footer {
-  border-top: 2px black solid;
-  /* margin-top: 230px; */
-  height: 150px;
+
   background-color: orangered;
-  font-size: 2rem;
   color: white;
+  font-size: 2rem;
+  border-top: 2px black solid;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: flex;
+
 }
 
 /* MOBILE */
@@ -379,10 +403,21 @@ footer {
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
+    /* justify-content: center; */
+    justify-content: center;
     gap: 0px;
     grid-auto-columns: 93px;
     grid-auto-rows: 81px;
     justify-items: start;
     grid-row-gap: 6px;
   }
+
+  .meme-editor{
+    gap: 0px;
+  }
+
+  .editor{
+    margin-top: -40px;
+  }
+
 }

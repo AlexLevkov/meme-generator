@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <div class="parent x y">
+      <!-- <div class="header x y">header</div>
+      <div class="main x">main</div>
+      <div class="footer x">footer</div> -->
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+   </div>
+
+</head>
+<script>
+   var maxHeight = window.screen.availHeight - (window.outerHeight - window.innerHeight)
+   // var maxHeight = 754
+
+
+   var elHeader = document.querySelector('.header')
+   var elMain = document.querySelector('.main')
+   var elFooter = document.querySelector('.footer')
+
+   elHeader.style.minHeight = 0.1 * maxHeight + 'px'
+   elMain.style.minHeight = 0.8 * maxHeight + 'px'
+   elFooter.style.minHeight = 0.1 * maxHeight + 'px'
+
+   var select = document.querySelectorAll('.header ~div')
+   // var select1 = document.querySelector('.x.y') // el with x+y classes
+   // var select2 = document.querySelector('.x .y') // el with y class inside x class
+
+
+
+</script>
+
+<link rel="stylesheet" href="css/css_for_sample.css">
+
+<body>
+
+</body>
+
+</html>
