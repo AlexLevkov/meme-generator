@@ -339,6 +339,7 @@ form {
 footer {
 
   background-color: orangered;
+  height:7vh;
   color: white;
   font-size: 2rem;
   border-top: 2px black solid;
