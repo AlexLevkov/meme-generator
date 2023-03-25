@@ -17,11 +17,14 @@ function saveToStorage() {
 }
 
 function updaeMemeGallery() {
+   console.log('gImgArr:', gImgArr)
    var dataURL = localStorage.getItem('img');
+   if (dataURL) {
    gImgArr = JSON.parse(dataURL);
+   }
    var elContainer = document.querySelector('.meme-gallery');
    if (!gImgArr.length){
-      elContainer.innerHTML = '<h1 style="    width: 100vw;">Your gallery is empty, you can create some memes and they will be saved here 😁</h1>';
+      elContainer.innerHTML = '<h1 style="width: 100vw;">Your gallery is empty, you can create some memes and they will be saved here 😁</h1>';
    } else{
       elContainer.innerHTML = '';
    }
