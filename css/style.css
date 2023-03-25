@@ -2,11 +2,11 @@
 
 * {
   box-sizing: border-box;
-  font-family: Impact;
+  font-family: cursive;
 }
 
 body {
-  background-color: white;
+  background-color: whitesmoke;
   margin: 0;
   overflow-x: hidden;
 }
@@ -44,11 +44,12 @@ button:hover {
   font-size: 40px;
   z-index: 1;
   color: white;
-
   align-self: center;
 }
 
 li {
+  display: inline-block;
+  user-select: none;
   list-style-type: none;
   font-size: 2rem;
   margin: 0;
@@ -57,10 +58,16 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 1vh;
+}
+
+li:active{
+  border-bottom: 2px solid white;
 }
 
 li:hover {
   cursor: pointer;
+  border-bottom: 2px solid white;
 }
 
 .nav {
@@ -72,9 +79,7 @@ li:hover {
   background-color: orangered;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px black solid;
-  /* height: 70px; */
-
+  height: 10vh
   /* align-items: center; */
 }
 
@@ -95,7 +100,6 @@ li:hover {
   top: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  border: 2px black solid;
 }
 
 .modal h2{
@@ -117,11 +121,10 @@ li:hover {
   grid-auto-rows: 200px;
   /* width: 90%; */
   padding: 15px;
-  min-height: 86vh;
+  min-height: 83vh;
 }
 
 .gallery {
-  /* margin: 15px 0; */
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
   gap: 15px;
@@ -130,11 +133,18 @@ li:hover {
   margin: 0 auto;
   padding: 15px;
   justify-content: center;
-  min-height: 86vh;
+  min-height: 83vh;
 }
+
+.btn-gallery{
+  height: 2rem;
+  margin-right: 15px;
+}
+
 
 img {
   height: 100%;
+  border-radius: 3px;
 }
 
 img:hover {
@@ -147,12 +157,24 @@ img:hover {
   border: whitesmoke 3px solid;
 }
 
-.meme-editor {
+.meme-editor, .about {
   display: none;
   justify-content: center;
   gap: 50px;
-  margin-top: 50px;
-  min-height: 86vh;
+  padding-top: 50px;
+  min-height: 83vh;
+}
+
+.about{
+  display: flex;
+  padding: 5%;
+  font-size: 1.5rem;
+  font-family: cursive;
+  font-weight: 100;
+}
+
+.about h2{
+  margin: 0;
 }
 
 .search-box {
@@ -342,7 +364,6 @@ footer {
   height:7vh;
   color: white;
   font-size: 2rem;
-  border-top: 2px black solid;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -419,6 +440,14 @@ footer {
 
   .editor{
     margin-top: -40px;
+  }
+
+  .about{
+    flex-direction: column;
+  }
+
+  footer{
+    font-size: 1rem;
   }
 
 }

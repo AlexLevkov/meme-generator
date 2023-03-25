@@ -6,7 +6,8 @@ function init() {
    createCanvasArea();
    createAddListners();
    onAddLine();
-   updaeMemeGallery();
+   // updaeMemeGallery();
+   onGallery()
    // updateStyle()
 }
 
@@ -143,9 +144,13 @@ function onMemesGallery() {
    var elContainerImage = document.querySelector('.image-gallery');
    var elContainerMeme = document.querySelector('.meme-editor');
    var elContainerMemeGallery = document.querySelector('.meme-gallery');
+   var elAbout = document.querySelector('.about');
+
+
    elContainerImage.style.display = 'none';
    elContainerMeme.style.display = 'none';
    elContainerMemeGallery.style.display = 'grid';
+   elAbout.style.display = 'none';
    //   toggleMenu();
    clearMemeEditor();
 }
@@ -155,16 +160,27 @@ function onGallery() {
    var elContainerImage = document.querySelector('.image-gallery');
    var elContainerMeme = document.querySelector('.meme-editor');
    var elContainerMemeGallery = document.querySelector('.meme-gallery');
+   var elAbout = document.querySelector('.about');
+   
    elContainerImage.style.display = 'block';
    elContainerMeme.style.display = 'none';
    elContainerMemeGallery.style.display = 'none';
+   elAbout.style.display = 'none';
    clearMemeEditor();
 }
 
-// opeing the about
+// opening the about
 function onAbout() {
-   var elModal = document.querySelector('.modal');
-   elModal.classList.toggle('modal-hide');
+   var elAbout = document.querySelector('.about');
+   var elContainerImage = document.querySelector('.image-gallery');
+   var elContainerMeme = document.querySelector('.meme-editor');
+   var elContainerMemeGallery = document.querySelector('.meme-gallery');
+
+   elAbout.style.display = 'flex';
+   elContainerImage.style.display = 'none';
+   elContainerMeme.style.display = 'none';
+   elContainerMemeGallery.style.display = 'none';
+
 }
 
 // clearing the meme editor
@@ -172,11 +188,10 @@ function clearMemeEditor() {
    gMeme.lines.forEach((line) => {
       line.txt = '';
    });
-   console.log(gMeme.lines);
    var elInput0 = document.querySelector('#input0');
-   var elInput1 = document.querySelector('#input1');
    elInput0.value = null;
-   elInput1.value = null;
+
+
 }
 
 // saving

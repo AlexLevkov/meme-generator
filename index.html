@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>meme-genrator</title>
+    <title>Meme-Genrator</title>
+    <link rel="icon" href="ICONS/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -135,9 +136,7 @@
       </div>
 
       <div class="meme-gallery" hidden>
-        <h1 class="meme-gallery-empty">
-          Your gallery is empty, you can create some memes and save them here 😁
-        </h1>
+  
       </div>
 
       <div class="meme-editor">
@@ -268,16 +267,29 @@
           </div>
         </div>
       </div>
+
+      <div class="about" hidden>
+        <div>
+          <h2>About</h2>
+          <p>
+            Welcome to MEMEGEN, My name is Alex Levkov and I am the creator of this app. 
+            <br>
+            <br>
+            Feel free to explore, create, and share your memes with friends and family. Thanks for visiting, and enjoy your memes 😎! 
+            <br>
+            <br>
+            To learn more about me and my other projects, please visit my main portfolio at <a style="color:orangered"href="https://alexlevkov.com">alexlevkov.com</a> . I'm always happy to connect and collaborate on new ideas.
+          </p>
+        </div>
+        <div>
+          <img src="/meme-imgs (square)/about-meme.jpg" alt="">
+        </div>
+       </div>
+ 
     </main>
 
-    <div class="modal modal-hide">
-      <h2>
-        MEMEGEN is a coding project by Alex Levkov - Thanks for visiting! Enjoy
-        your memes 😎
-        <button onclick="onAbout()">OK! Lets make some memes!</button>
-      </h2>
-    </div>
-    <footer>MEMEGEN 2022 ©</footer>
+  
+    <footer>MEMEGEN - Alex Levkov 2023 ©</footer>
 
     <script src="js/upload-service.js"></script>
     <script src="js/storage-servies.js"></script>

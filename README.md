@@ -1,6 +1,6 @@
-## Meme Generator 
+## Meme Genertator 
 
-Meme Generator is a meme creation app.<br/>
+Meme Genertator is a meme creation app.<br/>
 [Run app 🚀](https://alexlevkov.github.io/Meme-Generator/)
 
 ### 🖥️ Main Features:
